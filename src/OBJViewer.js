@@ -3,11 +3,17 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import * as THREE from 'three';
 import OrbitControlsModule from 'three-orbit-controls'
+import styled from 'styled-components';
 import {OBJLoader} from 'three-addons';
 import { CircularProgress } from '@material-ui/core';
 
 const OrbitControls = OrbitControlsModule(THREE);
 
+const Loader = styled(CircularProgress)`
+    && {
+        color: red;
+    }
+`;
 
 class OBJViewer extends Component {
     static propTypes = {
@@ -57,7 +63,7 @@ class OBJViewer extends Component {
         directionalLight.position.y = 1;
         directionalLight.position.z = 0;
         directionalLight.position.normalize();
-        scene.add(directionalLight);
+        camera.add(directionalLight);
 
         const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
 
