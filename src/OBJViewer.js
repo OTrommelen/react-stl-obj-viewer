@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import * as THREE from 'three';
 import OrbitControlsModule from 'three-orbit-controls'
 import {OBJLoader} from 'three-addons';
-import { CircilarProgress } from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
 
 const OrbitControls = OrbitControlsModule(THREE);
 
@@ -178,7 +178,7 @@ class OBJViewer extends Component {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <CircularPrgress
+                    <CircularProgress
                         color={'#123abc'}
                         loading={true}
                     />
