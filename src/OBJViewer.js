@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import * as THREE from 'three';
 import OrbitControlsModule from 'three-orbit-controls'
 import {OBJLoader} from 'three-addons';
-import { MoonLoader } from 'react-spinners';
+import { PulseLoader } from 'react-spinners';
 
 const OrbitControls = OrbitControlsModule(THREE);
 
@@ -177,7 +177,7 @@ class OBJViewer extends Component {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <MoonLoader
+                    <PulseLoader
                         color={'#ff3b30'}
                         loading={true}
                     />

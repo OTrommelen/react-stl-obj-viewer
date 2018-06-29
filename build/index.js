@@ -49908,7 +49908,7 @@ var OBJViewer = function (_Component) {
                             justifyContent: 'center',
                             alignItems: 'center'
                         } },
-                    _react2.default.createElement(_reactSpinners.MoonLoader, {
+                    _react2.default.createElement(_reactSpinners.PulseLoader, {
                         color: '#ff3b30',
                         loading: true
                     })
