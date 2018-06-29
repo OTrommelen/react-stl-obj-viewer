@@ -58990,7 +58990,7 @@ var OBJViewer = function (_Component) {
                             justifyContent: 'center',
                             alignItems: 'center'
                         } },
-                    _react2.default.createElement(CircularPrgress, {
+                    _react2.default.createElement(_core.CircularProgress, {
                         color: '#123abc',
                         loading: true
                     })
