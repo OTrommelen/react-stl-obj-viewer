@@ -3,17 +3,10 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import * as THREE from 'three';
 import OrbitControlsModule from 'three-orbit-controls'
-import styled from 'styled-components';
 import {OBJLoader} from 'three-addons';
-import { CircularProgress } from '@material-ui/core';
+import { MoonLoader } from 'react-spinners';
 
 const OrbitControls = OrbitControlsModule(THREE);
-
-const Loader = styled(CircularProgress)`
-    && {
-        color: red;
-    }
-`;
 
 class OBJViewer extends Component {
     static propTypes = {
@@ -184,8 +177,8 @@ class OBJViewer extends Component {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <CircularProgress
-                        color={'#123abc'}
+                    <MoonLoader
+                        color={'#ff3b30'}
                         loading={true}
                     />
                 </div>
