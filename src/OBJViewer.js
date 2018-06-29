@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import * as THREE from 'three';
 import OrbitControlsModule from 'three-orbit-controls'
 import {OBJLoader} from 'three-addons';
-import {ScaleLoader} from 'react-spinners';
+import { CircilarProgress } from '@material-ui/core';
 
 const OrbitControls = OrbitControlsModule(THREE);
 
@@ -53,7 +53,7 @@ class OBJViewer extends Component {
         scene = new THREE.Scene();
 
         const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.x = 0;
+        directionalLight.position.x = 1;
         directionalLight.position.y = 1;
         directionalLight.position.z = 0;
         directionalLight.position.normalize();
@@ -178,7 +178,7 @@ class OBJViewer extends Component {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <ScaleLoader
+                    <CircularPrgress
                         color={'#123abc'}
                         loading={true}
                     />
