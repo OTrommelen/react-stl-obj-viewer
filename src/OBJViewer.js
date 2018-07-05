@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom';
 import * as THREE from 'three';
 import OrbitControlsModule from 'three-orbit-controls'
-import {OBJLoader} from 'three-addons';
-import { PulseLoader } from 'react-spinners';
+import { OBJLoader } from 'three-addons';
+import { ScaleLoader } from 'react-spinners';
 
 const OrbitControls = OrbitControlsModule(THREE);
+
 
 class OBJViewer extends Component {
     static propTypes = {
@@ -45,14 +46,14 @@ class OBJViewer extends Component {
 
     renderModel(props) {
         let camera, scene, renderer, controls;
-        const {url, file, width, height, modelColor, backgroundColor, orbitControls, onSceneRendered, sceneClassName} = props;
+        const { url, file, width, height, modelColor, backgroundColor, orbitControls, onSceneRendered, sceneClassName } = props;
         let xDims, yDims, zDims;
 
         camera = new THREE.PerspectiveCamera(30, width / height, 1, 10000);
         scene = new THREE.Scene();
 
         const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.x = 1;
+        directionalLight.position.x = 0;
         directionalLight.position.y = 1;
         directionalLight.position.z = 0;
         directionalLight.position.normalize();
@@ -89,7 +90,7 @@ class OBJViewer extends Component {
             object.position.y = -95;
             scene.add(object);
 
-            renderer = new THREE.WebGLRenderer({preserveDrawingBuffer: true, antialias: true});
+            renderer = new THREE.WebGLRenderer({ preserveDrawingBuffer: true, antialias: true });
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setClearColor(backgroundColor, 1);
             renderer.setSize(width, height);
@@ -147,7 +148,7 @@ class OBJViewer extends Component {
     }
 
     componentWillReceiveProps() {
-        this.setState({allowUpdate: true})
+        this.setState({ allowUpdate: true })
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -177,8 +178,8 @@ class OBJViewer extends Component {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <PulseLoader
-                        color={'#ff3b30'}
+                    <ScaleLoader
+                        color={'#123abc'}
                         loading={true}
                     />
                 </div>
