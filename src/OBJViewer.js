@@ -83,7 +83,7 @@ class OBJViewer extends Component {
 
             object.traverse(function (child) {
                 if (child.isMesh) {
-                    child.material.color.setStyle("#000000");
+                    child.material.color.setStyle(modelColor);
                 }
             });
 

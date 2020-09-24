@@ -49813,7 +49813,7 @@ var OBJViewer = function (_Component) {
 
                 object.traverse(function (child) {
                     if (child.isMesh) {
-                        child.material.color.setStyle("#000000");
+                        child.material.color.setStyle(modelColor);
                     }
                 });
 
@@ -70711,7 +70711,7 @@ var STLViewer = function (_Component) {
 
                 mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({
                     overdraw: true,
-                    color: "#000000"
+                    color: modelColor
                 }));
 
                 geometry.computeBoundingBox();

@@ -66,7 +66,7 @@ class STLViewer extends Component {
                 geometry,
                 new THREE.MeshLambertMaterial({
                         overdraw: true,
-                        color: "#000000",
+                        color: modelColor,
                     }
                 ));
 
