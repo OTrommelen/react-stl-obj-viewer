@@ -70694,8 +70694,8 @@ var STLViewer = function (_Component) {
 
             var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
             directionalLight.position.x = 0;
-            directionalLight.position.y = 1;
-            directionalLight.position.z = 0;
+            directionalLight.position.y = 0;
+            directionalLight.position.z = 1;
             directionalLight.position.normalize();
             camera.add(directionalLight);
 
