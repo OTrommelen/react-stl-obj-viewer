@@ -55,6 +55,7 @@ class STLViewer extends Component {
         const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
         scene.add(ambientLight);
         scene.add(camera);
+        console.log("asdasd");
 
         const onLoad = geometry => {
             geometry.computeFaceNormals();
