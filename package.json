@@ -10,9 +10,6 @@
     "type": "git",
     "url": "git@github.com:bohdanbirdie/react-stl-obj-viewer.git"
   },
-  "bugs": {
-    "url": "git@github.com:bohdanbirdie/react-stl-obj-viewer.git"
-  },
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
