@@ -70692,17 +70692,13 @@ var STLViewer = function (_Component) {
             camera = new THREE.PerspectiveCamera(30, width / height, 1, 10000);
             scene = new THREE.Scene();
 
-            var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-            directionalLight.position.x = 0;
-            directionalLight.position.y = 0;
-            directionalLight.position.z = 1;
-            directionalLight.position.normalize();
-            camera.add(directionalLight);
+            var pointLight = new THREE.PointLight(0xffffff);
+            scene.add(camera);
+            camera.add(pointLight);
 
             var ambientLight = new THREE.AmbientLight(0x404040); // soft white light
             scene.add(ambientLight);
-            scene.add(camera);
-            console.log("asdasd");
+            console.log("24102020-01");
 
             var onLoad = function onLoad(geometry) {
                 geometry.computeFaceNormals();
@@ -70724,7 +70720,9 @@ var STLViewer = function (_Component) {
                 camera = new THREE.PerspectiveCamera(30, width / height, 1, distance);
                 camera.position.set(0, 0, Math.max(xDims * 3, yDims * 3, zDims * 3));
 
+                var pointLight = new THREE.PointLight(0xffffff);
                 scene.add(camera);
+                camera.add(pointLight);
 
                 renderer = new THREE.WebGLRenderer({
                     preserveDrawingBuffer: true,
