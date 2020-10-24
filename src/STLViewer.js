@@ -46,12 +46,12 @@ class STLViewer extends Component {
         scene = new THREE.Scene();
 
         var pointLight = new THREE.PointLight( 0xffffff ); 
+        scene.add(camera);
         camera.add( pointLight );   
 
         const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
         scene.add(ambientLight);
-        scene.add(camera);
-        console.log("asdasd");
+        console.log("24102020-01");
 
         const onLoad = geometry => {
             geometry.computeFaceNormals();
@@ -77,9 +77,9 @@ class STLViewer extends Component {
             camera.position.set(0, 0, Math.max(xDims * 3, yDims * 3, zDims * 3));
 
             var pointLight = new THREE.PointLight( 0xffffff ); 
+            scene.add(camera);
             camera.add( pointLight )
             
-            scene.add(camera);
 
             renderer = new THREE.WebGLRenderer({
                 preserveDrawingBuffer: true,
