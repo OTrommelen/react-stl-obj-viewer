@@ -70697,8 +70697,8 @@ var STLViewer = function (_Component) {
             camera.add(pointLight);
 
             var ambientLight = new THREE.AmbientLight(0x404040); // soft white light
-            scene.add(ambientLight);
-            console.log("24102020-01");
+            //scene.add(ambientLight);
+            console.log("24102020-02");
 
             var onLoad = function onLoad(geometry) {
                 geometry.computeFaceNormals();
@@ -70722,7 +70722,8 @@ var STLViewer = function (_Component) {
 
                 var pointLight = new THREE.PointLight(0xffffff);
                 scene.add(camera);
-                camera.add(pointLight);
+                //camera.add( pointLight )
+
 
                 renderer = new THREE.WebGLRenderer({
                     preserveDrawingBuffer: true,
