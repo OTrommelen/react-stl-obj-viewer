@@ -45,12 +45,8 @@ class STLViewer extends Component {
         camera = new THREE.PerspectiveCamera(30, width / height, 1, 10000);
         scene = new THREE.Scene();
 
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.x = 0;
-        directionalLight.position.y = 0;
-        directionalLight.position.z = 1;
-        directionalLight.position.normalize();
-        camera.add(directionalLight);
+        var pointLight = new THREE.PointLight( 0xffffff ); 
+        camera.add( pointLight );   
 
         const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
         scene.add(ambientLight);
@@ -80,6 +76,9 @@ class STLViewer extends Component {
             camera = new THREE.PerspectiveCamera(30, width / height, 1, distance);
             camera.position.set(0, 0, Math.max(xDims * 3, yDims * 3, zDims * 3));
 
+            var pointLight = new THREE.PointLight( 0xffffff ); 
+            camera.add( pointLight )
+            
             scene.add(camera);
 
             renderer = new THREE.WebGLRenderer({
