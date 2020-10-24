@@ -70698,7 +70698,7 @@ var STLViewer = function (_Component) {
 
             var ambientLight = new THREE.AmbientLight(0x404040); // soft white light
             //scene.add(ambientLight);
-            console.log("24102020-02");
+            console.log("24102020-03");
 
             var onLoad = function onLoad(geometry) {
                 geometry.computeFaceNormals();
