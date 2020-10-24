@@ -70722,8 +70722,7 @@ var STLViewer = function (_Component) {
 
                 var pointLight = new THREE.PointLight(0xffffff);
                 scene.add(camera);
-                //camera.add( pointLight )
-
+                camera.add(pointLight);
 
                 renderer = new THREE.WebGLRenderer({
                     preserveDrawingBuffer: true,
