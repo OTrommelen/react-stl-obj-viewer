@@ -32,13 +32,9 @@ class STLViewer extends Component {
         sceneClassName: '',
     };
 
-    componentDidMount(nextProps, nextState) {
-        this.renderModel(nextProps);
+    componentDidMount() {
+        this.renderModel(this.props);
     }
-    
-    /* componentWillUpdate(nextProps, nextState) {
-        this.renderModel(nextProps);
-    } */
 
     renderModel(props) {
         let camera, scene, renderer, mesh, distance, controls;
@@ -55,7 +51,7 @@ class STLViewer extends Component {
 
         const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
         //scene.add(ambientLight);
-        console.log("05112020-01");
+        console.log("24102020-06");
 
         const onLoad = geometry => {
             geometry.computeFaceNormals();
@@ -138,6 +134,10 @@ class STLViewer extends Component {
             return false
         }
         return true
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        this.renderModel(nextProps);
     }
 
     componentDidCatch(error, info) {

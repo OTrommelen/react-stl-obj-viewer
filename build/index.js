@@ -70660,14 +70660,9 @@ var STLViewer = function (_Component) {
 
     _createClass(STLViewer, [{
         key: 'componentDidMount',
-        value: function componentDidMount(nextProps, nextState) {
-            this.renderModel(nextProps);
+        value: function componentDidMount() {
+            this.renderModel(this.props);
         }
-
-        /* componentWillUpdate(nextProps, nextState) {
-            this.renderModel(nextProps);
-        } */
-
     }, {
         key: 'renderModel',
         value: function renderModel(props) {
@@ -70703,7 +70698,7 @@ var STLViewer = function (_Component) {
 
             var ambientLight = new THREE.AmbientLight(0x404040); // soft white light
             //scene.add(ambientLight);
-            console.log("05112020-01");
+            console.log("24102020-06");
 
             var onLoad = function onLoad(geometry) {
                 geometry.computeFaceNormals();
@@ -70781,6 +70776,11 @@ var STLViewer = function (_Component) {
                 return false;
             }
             return true;
+        }
+    }, {
+        key: 'componentWillUpdate',
+        value: function componentWillUpdate(nextProps, nextState) {
+            this.renderModel(nextProps);
         }
     }, {
         key: 'componentDidCatch',
