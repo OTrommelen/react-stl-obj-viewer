@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-spinners": "^0.2.6",
     "three": "^0.90.0",
     "three-addons": "^1.1.0",
