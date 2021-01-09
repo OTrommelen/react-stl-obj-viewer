@@ -32,13 +32,9 @@ class STLViewer extends Component {
         sceneClassName: '',
     };
 
-    componentWillMount = () =>{
+    componentDidMount() {
         this.renderModel(this.props);
     }
-
-    /* componentDidMount() {
-        this.renderModel(this.props);
-    } */
 
     renderModel(props) {
         let camera, scene, renderer, mesh, distance, controls;
@@ -55,7 +51,7 @@ class STLViewer extends Component {
 
         const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
         //scene.add(ambientLight);
-        console.log("09012021-01");
+        console.log("24102020-06");
 
         const onLoad = geometry => {
             geometry.computeFaceNormals();
@@ -133,36 +129,20 @@ class STLViewer extends Component {
         };
     }
 
-
-    shouldComponentUpdate = (nextProps, nextState) => {
+    shouldComponentUpdate(nextProps, nextState) {
         if (JSON.stringify(nextProps) === JSON.stringify(this.props)) {
             return false
         }
         return true
     }
 
-    /* shouldComponentUpdate(nextProps, nextState) {
-        if (JSON.stringify(nextProps) === JSON.stringify(this.props)) {
-            return false
-        }
-        return true
-    } */
-
-    componentWillUpdate = (nextProps, nextState) => {
+    componentWillUpdate(nextProps, nextState) {
         this.renderModel(nextProps);
     }
 
-    /* componentWillUpdate(nextProps, nextState) {
-        this.renderModel(nextProps);
-    } */
-
-    componentDidCatch = (error, info) => {
+    componentDidCatch(error, info) {
         console.log(error, info)
     }
-
-    /* componentDidCatch(error, info) {
-        console.log(error, info)
-    } */
 
     render() {
         return (
