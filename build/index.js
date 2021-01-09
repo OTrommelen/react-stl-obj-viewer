@@ -70653,18 +70653,38 @@ var STLViewer = function (_Component) {
     _inherits(STLViewer, _Component);
 
     function STLViewer() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, STLViewer);
 
-        return _possibleConstructorReturn(this, (STLViewer.__proto__ || Object.getPrototypeOf(STLViewer)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = STLViewer.__proto__ || Object.getPrototypeOf(STLViewer)).call.apply(_ref, [this].concat(args))), _this), _this.componentWillMount = function () {
+            _this.renderModel(_this.props);
+        }, _this.shouldComponentUpdate = function (nextProps, nextState) {
+            if (JSON.stringify(nextProps) === JSON.stringify(_this.props)) {
+                return false;
+            }
+            return true;
+        }, _this.componentWillUpdate = function (nextProps, nextState) {
+            _this.renderModel(nextProps);
+        }, _this.componentDidCatch = function (error, info) {
+            console.log(error, info);
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(STLViewer, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.renderModel(this.props);
-        }
-    }, {
         key: 'renderModel',
+
+
+        /* componentDidMount() {
+            this.renderModel(this.props);
+        } */
+
         value: function renderModel(props) {
             var _this2 = this;
 
@@ -70698,7 +70718,7 @@ var STLViewer = function (_Component) {
 
             var ambientLight = new THREE.AmbientLight(0x404040); // soft white light
             //scene.add(ambientLight);
-            console.log("21122020-01");
+            console.log("09012021-01");
 
             var onLoad = function onLoad(geometry) {
                 geometry.computeFaceNormals();
@@ -70769,26 +70789,26 @@ var STLViewer = function (_Component) {
                 render();
             };
         }
-    }, {
-        key: 'shouldComponentUpdate',
-        value: function shouldComponentUpdate(nextProps, nextState) {
+
+        /* shouldComponentUpdate(nextProps, nextState) {
             if (JSON.stringify(nextProps) === JSON.stringify(this.props)) {
-                return false;
+                return false
             }
-            return true;
-        }
-    }, {
-        key: 'componentWillUpdate',
-        value: function componentWillUpdate(nextProps, nextState) {
+            return true
+        } */
+
+        /* componentWillUpdate(nextProps, nextState) {
             this.renderModel(nextProps);
-        }
-    }, {
-        key: 'componentDidCatch',
-        value: function componentDidCatch(error, info) {
-            console.log(error, info);
-        }
+        } */
+
     }, {
         key: 'render',
+
+
+        /* componentDidCatch(error, info) {
+            console.log(error, info)
+        } */
+
         value: function render() {
             return _react2.default.createElement(
                 'div',
